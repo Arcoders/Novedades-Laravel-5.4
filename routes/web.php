@@ -67,3 +67,11 @@ Route::get('courses', function () use ($courses) {
     dd($courses->toArray(), $premium->toArray(), $free->toArray());
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('images', function () {
+    return view('images');
+});
