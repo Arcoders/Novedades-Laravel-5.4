@@ -8,11 +8,16 @@
         <div class="container">
             <div class="row">
 
-                @include('components/thumbnail', [
-                    'title' => 'Arcoders',
-                    'image' => asset('img/foto.jpg'),
-                    'description' => 'Lorem ipsum dolor set amet.'
-                ])
+                @component('components/thumbnail')
+
+                    @slot('title', 'Arcoders')
+                    @slot('image', asset('img/foto.jpg'))
+
+                    @slot('description')
+                        Lorem ipsum dolor sit ametelit.
+                    @endslot
+
+                @endcomponent
 
                 @include('components/thumbnail', [
                     'title' => 'Arcoders',
