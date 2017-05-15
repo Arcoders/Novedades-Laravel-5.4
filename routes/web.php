@@ -12,7 +12,7 @@
 */
 
 use App\Course;
-use App\AlertFacade as Alert;
+use Facades\App\Alert;
 
 $courses = collect([
         new Course(['title' => 'OOP', 'premium' => true]),
