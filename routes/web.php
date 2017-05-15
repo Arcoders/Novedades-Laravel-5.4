@@ -12,6 +12,7 @@
 */
 
 use App\Course;
+use App\AlertFacade as Alert;
 
 $courses = collect([
         new Course(['title' => 'OOP', 'premium' => true]),
@@ -74,4 +75,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('images', function () {
     return view('images');
+});
+
+Route::get('dashboard', function () {
+
+    Alert::message('Bienvenido de nuevo!', 'success');
+
+    // session()->flash('alert', [
+    //     'message' => 'Bienvenido de nuevo!',
+    //     'type' => 'success'
+    // ]);
+
+    return view('dashboard');
+
 });
