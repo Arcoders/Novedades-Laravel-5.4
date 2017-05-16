@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Styde\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -227,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Alert' => Facades\App\Alert::class,
+        'Access' => Styde\Html\Facades\Access::class,
 
     ],
 

@@ -25,8 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products', 'ProductController');
-
 Route::get('courses', function () use ($courses) {
 
 /*
@@ -89,5 +87,14 @@ Route::get('dashboard', function () {
     // ]);
 
     return view('dashboard');
+
+});
+
+// Route::resource('products', 'ProductController');
+
+Route::prefix('admin')->middleware('guest')->group(function () {
+
+    Route::name('products.edit')->get('products/{product}/edit', 'ProductController@edit');
+    Route::name('products.update')->put('products/{product}', 'ProductController@update');
 
 });
