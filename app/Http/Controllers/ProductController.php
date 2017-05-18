@@ -75,6 +75,7 @@ class ProductController extends Controller
     {
 
         $this->validate($request, [
+            'name' => 'required',
             'category_id' => 'nullable|exists:categories,id'
         ]);
 
