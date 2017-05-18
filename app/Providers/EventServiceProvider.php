@@ -13,9 +13,17 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+
+        /*
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        */
+
+        'App\Event\ProductUpdated' => [
+            'App\Listeners\SendProductUpdatedConfirmation'
+        ]
+
     ];
 
     /**
@@ -25,8 +33,14 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         parent::boot();
 
-        //
+        /*
+        Event::listen('eloquent.updated: App\Product', function($product) {
+            dd('Actualizando producto', $product->toArray());
+        });
+        */
+
     }
 }
