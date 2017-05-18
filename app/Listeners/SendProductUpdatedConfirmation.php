@@ -3,8 +3,10 @@
 namespace App\Listeners;
 
 use App\Event\ProductUpdated;
+use App\Mail\ProductUpdated as ProductUpdatedMail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Mail;
 
 class SendProductUpdatedConfirmation
 {
@@ -26,6 +28,7 @@ class SendProductUpdatedConfirmation
      */
     public function handle(ProductUpdated $event)
     {
-        dd('Actualizando producto', $event->product);
+        Mail::to('Arcoders@admin.com')
+            ->send(new ProductUpdatedMail($event->product));
     }
 }
