@@ -37,6 +37,11 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <example></example>
+    </div>
+    
 </div>
 @endslot
 
