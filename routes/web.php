@@ -21,7 +21,7 @@ $courses = collect([
         new Course(['title' => 'Laravel 5.4', 'premium' => false]),
 ]);
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
 

@@ -7,7 +7,7 @@
 
                     <div class="panel-body">
                         Escribe tu nombre
-                        <input v-model="name" class="form-control">
+                        <input name="name" v-model="name" class="form-control">
                     </div>
                 </div>
             </div>

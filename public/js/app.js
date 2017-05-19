@@ -31772,6 +31772,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "name"
     }],
     staticClass: "form-control",
+    attrs: {
+      "name": "name"
+    },
     domProps: {
       "value": (_vm.name)
     },
